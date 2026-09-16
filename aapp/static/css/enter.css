@@ -1,0 +1,309 @@
+/* ==============================
+   1. Basic settings
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #203b2b;
+    background: #fffdf7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ==============================
+   2. Header and menu
+   ============================== */
+
+.header {
+    background: white;
+    border-bottom: 1px solid #eeeeee;
+    padding: 18px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #247044;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #e89b36;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #203b2b;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.menu a:hover {
+    color: #247044;
+}
+
+.menu-button {
+    display: none;
+    border: none;
+    background: #247044;
+    color: white;
+    font-size: 22px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* ==============================
+   3. Hero section
+   ============================== */
+
+.hero {
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.small-title {
+    color: #e89b36;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+h1 span,
+h2 span {
+    color: #247044;
+}
+
+.hero-text>p:not(.small-title) {
+    color: #66736a;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.button {
+    display: inline-block;
+    background: #247044;
+    color: white;
+    padding: 14px 25px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #18532f;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img,
+.about-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* ==============================
+   4. About section
+   ============================== */
+
+.section {
+    padding: 80px 0;
+}
+
+.two-columns {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.two-columns>* {
+    flex: 1;
+}
+
+h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.two-columns p:not(.small-title) {
+    color: #66736a;
+    line-height: 1.7;
+}
+
+/* ==============================
+   5. Services cards
+   ============================== */
+
+.light-section {
+    background: #f1f6ed;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.card-icon {
+    font-size: 40px;
+}
+
+.card h3 {
+    color: #247044;
+}
+
+.card p {
+    color: #66736a;
+    line-height: 1.6;
+}
+
+/* ==============================
+   6. Contact section and footer
+   ============================== */
+
+.contact-section {
+    background: #247044;
+    color: white;
+    padding: 65px 0;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contact-section .small-title {
+    color: #f7c66f;
+}
+
+.contact-section h2 {
+    margin-top: 10px;
+}
+
+.white-button {
+    background: white;
+    color: #247044;
+}
+
+.footer {
+    background: #173d28;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ==============================
+   7. Mobile screen
+   ============================== */
+
+@media (max-width: 700px) {
+    .menu-button {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 5%;
+        width: 90%;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 5px 15px #cccccc;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-content,
+    .two-columns,
+    .cards,
+    .contact-box {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .hero-image img,
+    .about-image {
+        height: 280px;
+    }
+
+    .card,
+    .contact-box>* {
+        width: 100%;
+    }
+
+    .contact-box {
+        align-items: flex-start;
+    }
+}

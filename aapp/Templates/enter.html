@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KR$NA</title>
+
+    <!-- CSS file ko connect kar rahe hain -->
+    <link rel="stylesheet" href="{% static 'css/enter.css' %}">
+</head>
+
+<body>
+
+    <!-- Header / Menu -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#home" class="logo">Green<span>Farm</span></a>
+
+            <!-- Mobile menu button -->
+            <button id="menuButton" class="menu-button">☰</button>
+
+            <nav id="menu" class="menu">
+                <a href="#home">Home</a>
+                <a href="{% url 'ai' %}">AI Assistant</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main hero section -->
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="small-title">MERE WEBSITE PE APKA SAWGAT HAII</p>
+                    <h1>किसान सशक्त, तो देश समृद्ध
+                        <!-- <span>खेती को बनाएँ आसान, बेहतर और आत्मनिर्भर।</span> किसानों के लिए स्मार्ट समाधान</h1> -->
+                        <p>
+                            <!-- "खेती का नया दौर, किसान के साथ हर कदम।" -->
+                        </p>
+                        <div class="actions">
+                            <!-- <a href="login" class="button">v</a> -->
+                            <a href="camera" class="button">CAMERA</a>
+                        </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="../static/images/s.jpg" alt="Green plant in a farm">
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section id="#" class="section">
+            <div class="container two-columns">
+                <img class="about-image" src="../static/images/K.png" alt="Person working in a farm">
+
+                <div>
+                    <p class="small-title">ABOUT OUR FARM</p>
+                    <h2>We grow with love.</h2>
+                    <p>
+                        Green Farm is a small family farm. We use natural methods
+                        to grow vegetables, fruits, and plants for our local people.
+                    </p>
+                    <p>
+                        Our goal is simple: healthy food, happy people, and a clean planet.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services section -->
+        <section id="services" class="section light-section">
+            <div class="container">
+                <div class="center-text">
+                    <p class="small-title">WHAT WE DO</p>
+                    <h2>Our farm services</h2>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-icon">🥕</div>
+                        <h3>Fresh Vegetables</h3>
+                        <p>Fresh vegetables picked directly from our farm.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🌱</div>
+                        <h3>Farm Visit</h3>
+                        <p>Visit our farm and learn how plants grow.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">☀️</div>
+                        <h3>Nature Activities</h3>
+                        <p>Enjoy peaceful nature activities with your family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact" class="contact-section">
+            <div class="container contact-box">
+                <div>
+                    <p class="small-title">COME AND VISIT</p>
+                    <h2>Spend a good day with nature.</h2>
+                    <p>Email us at: hello@greenfarm.com</p>
+                </div>
+                <a class="button white-button" href="mailto:hello@greenfarm.com">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© {% now "Y" %} Green Farm. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file ko connect kar rahe hain -->
+    <script src="{% static 'js/enter.js' %}"></script>
+</body>
+
+</html>

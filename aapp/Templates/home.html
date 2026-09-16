@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+<body>
+
+  <div class="scene">
+    <!-- <div class="glow"></div> -->
+
+    <header class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name">--KR$NA--</span>
+    </header>
+
+    <main class="hero" id="hero">
+      <h1 class="hero-title"> SWAGAT HAI </h1>
+      <p class="hero-subtitle">
+        HAMRE SATH JUDE NAYE SAFAR </MEnu>
+      </p>
+
+      <div class="actions">
+        <a href="login" class="btn btn-ghost">Log in</a>
+        <a href="register" class="btn btn-solid">Sign up</a>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>&copy; <span id="year"></span>--KR$NA--</p>
+    </footer>
+  </div>
+
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

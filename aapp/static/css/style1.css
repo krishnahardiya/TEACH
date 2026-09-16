@@ -1,0 +1,185 @@
+:root {
+  /* --bg: #0f1115; */
+    background: url('../images/krishna.png') center center / cover no-repeat fixed;
+  --surface: #171a21;
+  --accent: #e8b14c;
+  --accent-dim: #7a5c25;
+  --text: #f5f6f8;
+  --text-dim: #9aa1ad;
+  --border: #262a33;
+  --radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.scene {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 24px;
+}
+
+.glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(232, 177, 76, 0.08) 0%, rgba(232, 177, 76, 0) 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.brand-mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 520px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.7s ease-out 0.1s forwards;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  max-width: 400px;
+}
+
+.actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  display: inline-block;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn-ghost {
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  border-color: var(--text-dim);
+  transform: translateY(-1px);
+}
+
+.btn-solid {
+  color: #16130a;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-solid:hover {
+  background: #f0c06b;
+  transform: translateY(-1px);
+}
+
+.foot {
+  position: relative;
+  z-index: 1;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 420px) {
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .btn {
+    transition: none;
+  }
+}

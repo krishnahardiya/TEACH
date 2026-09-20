@@ -1,0 +1,91 @@
+login
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in — Greenfield</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+
+<body>
+
+    <div class="field-scene">
+        <div class="crop-row crop-row-1"></div>
+        <div class="crop-row crop-row-2"></div>
+        <div class="sun"></div>
+
+        <header class="brand">
+            <a href="{% url 'home' %}" class="brand-link">
+                <svg class="leaf-mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z" fill="currentColor" />
+                    <path d="M4 20C8 16 12 12 20 4" stroke="#2B1D14" stroke-width="1.2" stroke-linecap="round" />
+                </svg>
+                <span class="brand-name">KRISNA</span>
+            </a>
+        </header>
+
+        <main class="auth-wrap">
+            <div class="auth-card">
+                <h1 class="auth-title">Welcome back to the farm</h1>
+                <p class="auth-subtitle">Log in with your mobile number to check on your crops.</p>
+
+                {% if form.non_field_errors %}
+                <div class="form-alert">
+                    {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <form method="post" novalidate id="login-form">
+                    {% csrf_token %}
+
+                    <div class="field">
+                        <label for="id_mobile">Mobile number</label>
+                        <div class="phone-field">
+                            <span class="phone-prefix">+91</span>
+                            <input type="tel" name="mobile" id="id_mobile" inputmode="numeric" maxlength="10"
+                                placeholder="98765 43210" autocomplete="tel" required autofocus>
+                        </div>
+                        <span class="field-error" id="mobile-error"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="id_password">Password</label>
+                        <div class="password-field">
+                            <input type="password" name="password" id="id_password" autocomplete="current-password"
+                                required>
+                            <button type="button" class="toggle-visibility" data-target="id_password"
+                                aria-label="Show password">Show</button>
+                        </div>
+                        {% if form.password.errors %}
+                        <span class="field-error">{{ form.password.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" class="btn btn-solid btn-block">Log in</button>
+                </form>
+
+                <p class="auth-switch">
+                    New to Greenfield? <a href="{% url 'register' %}" class="inline-link">Create an account</a>
+                </p>
+            </div>
+        </main>
+
+        <footer class="foot">
+            <p>&copy; <span id="year"></span> Greenfield Farms.</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

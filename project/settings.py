@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-# STATIC_URL = 'static/'
+
 
 
 # Email
@@ -133,9 +133,7 @@ MAILERS = {
 }
 
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'aapp' / 'static',
-]
+
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -155,18 +153,13 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
  
 
  
-STATIC_URL = "static/"
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-
-
-
-
 STATIC_URL = "/static/"
 
+
+
+
 STATICFILES_DIRS = [
-    BASE_DIR / "app" / "static",
+    BASE_DIR / "aapp" / "static",
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"

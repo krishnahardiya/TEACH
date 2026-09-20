@@ -130,15 +130,7 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
-# STATICFILER_DIRS =[
-#     BASE_DIR / "static",
-# ]   
-# STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-# ]
-STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'aapp' / 'static',
@@ -156,9 +148,12 @@ SECRET_KEY = "your-django-secret-key"
 DEBUG = True
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-from dotenv import load_dotenv
-import os
+ 
 
-load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+ 
+
+ 
+STATIC_URL = "static/"
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
